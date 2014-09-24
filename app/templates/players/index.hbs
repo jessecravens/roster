@@ -1,0 +1,45 @@
+
+{{#if model.length}}
+  {{#each model}}
+    <tr>
+      <td>
+        {{id}}
+      </td>
+      <td>
+        {{#link-to 'player' this }}{{username}}{{/link-to}}
+      </td>
+      <td>
+        {{dob}}
+      </td>
+      <td>
+        {{avatar}}
+      </td>
+    </tr>
+  {{/each}}
+{{else}}
+  <tr>
+    <td>
+      <p>There are no players on this team.</p>
+    </td>
+    <td>
+    </td>
+    <td>
+    </td>
+    <td>
+    </td>
+  </tr>
+{{/if}}
+
+<!-- <tr>
+  <td>
+  <button class="addTeam" {{action 'openPlayerModal' 'modal' model}}>
+    Add Player
+  </button>
+  </td>
+</tr> -->
+
+<tr>
+  <td>
+    <p class="tut"> < < < < players.index.hbs</p>
+  </td>
+</tr>

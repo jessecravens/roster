@@ -1,0 +1,19 @@
+<p class="tut"> < teams.hbs</p>
+
+<div class="col-sm-3 col-md-2 sidebar">
+  <h2 class="">Teams</h2>
+  <ul class="nav nav-sidebar">
+    {{#each model}}
+      <li>{{#link-to 'team' this}}{{name}}{{/link-to}}</li>
+    {{/each}}
+      <li>
+        <button class="addTeam" {{action 'openTeamModal' 'modal' model}}>
+          Add Team
+        </button>
+      </li>
+  </ul>
+</div>
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+  <h1 class="page-header">Dashboard</h1>
+    {{outlet}}
+</div>

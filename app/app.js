@@ -9,6 +9,34 @@ var App = Ember.Application.extend({
   Resolver: Resolver
 });
 
+Ember.View.reopen({
+
+  didInsertElement : function(){
+    this._super();
+    Ember.run.scheduleOnce('afterRender', this, this.afterRenderEvent);
+  },
+
+  afterRenderEvent : function(){
+
+    //debugger;
+
+    if (Roster.__container__.lookup('controller:application').get('isTutorial')){
+
+      this.$('.tut').css('display','inline').animate({
+        width: "70%",
+        opacity: 0.3,
+        fontSize: "2em",
+        borderWidth: "10px"
+      }, 1000 );
+
+    }else{
+      this.$('.tut').css('display','none');
+    }
+
+  }
+
+});
+
 loadInitializers(App, 'roster');
 
 export default App;

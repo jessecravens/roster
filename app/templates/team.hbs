@@ -1,0 +1,11 @@
+<p class="tut"> < < team.hbs</p>
+
+<h2 class="sub-header">{{model.name}}</h2>
+
+<ul class="nav nav-pills">
+  <li>{{#link-to 'players' model}}Players{{/link-to}}</li>
+  <li>{{#link-to 'team.details' model}}Details{{/link-to}}</li>
+  <li>{{#link-to 'team.data' model}}Team Data{{/link-to}}</li>
+</ul>
+
+{{outlet}}
